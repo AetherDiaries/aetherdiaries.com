@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="231.245mm" height="145.181mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 30858.31 19373.58">
+    <defs>
+        <clipPath id="id0">
+            <path d="M16.53 19373.58c-2.86,-3336.24 4393.96,-2930.62 15911.75,-3561.43 11517.79,-630.8 14677.88,-4508.96 14930.04,-15812.16l-30858.31 0 16.53 19373.58z"/>
+        </clipPath>
+    </defs>
+    <g style="clip-path:url(#id0);">
+        <image x="0" y="0" width="30858.31" height="19373.58" href="paintings/image2.jpg" preserveAspectRatio="xMidYMid slice"/>
+    </g>
+</svg>

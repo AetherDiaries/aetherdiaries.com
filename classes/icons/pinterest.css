@@ -1,0 +1,10 @@
+.pinterest-logo {
+	width: 15px;
+	height: 15px;
+	-webkit-mask-image: url('/svgs/pinterest-logo.svg');
+	mask-image: url('/svgs/pinterest-logo.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	mask-size: contain;
+}

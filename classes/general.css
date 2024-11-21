@@ -1,0 +1,194 @@
+body{
+    height: calc(100vh - var(--top-padding));
+    background: linear-gradient(180deg, #969696 17%, #FFFFFF 80%);
+    overflow: hidden;
+}
+
+#bgImageSVG{
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-99;
+}
+
+#main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#main>div{
+    color: white;
+    height: 80vh;
+    &:first-child {
+        align-content: center;
+        font: italic 600 2vw/1.1 "Montserrat", sans-serif;
+        font-variant: small-caps;
+        height:calc(80vh - var(--padLimitH));
+        padding: var(--padLimitH) 0 0 calc(var(--padLimitW) - 100px);
+        width: 50%;
+        
+        /* Inside Grid */
+        display:grid;
+        gap: 10px 30px;
+        grid: repeat(2, auto) / 90px 1fr;
+        align-items: center;
+        text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.666);
+        &>:last-child{font-family: "Merriweather", serif;}
+    }
+    &:last-child {
+        padding-right: var(--padLimitW);
+        width: calc(25vw - var(--padLimitW));
+        
+        display:flex;
+        flex-direction:column;
+        row-gap: 20px;
+        
+        &>*{
+            &:nth-last-child(2){align-self:flex-start;}
+            &:last-child{align-self:flex-end;}
+        }
+    }
+}
+
+
+#quotes-section{
+    font-size: 32px;
+    margin-top: 240px;
+    line-height: 1.1;
+    color: rgb(80, 80, 80);
+    padding: 30px 0;
+    &>*{display: block;}
+    &>:first-child{
+        text-align: center;
+        font-weight: 700;
+    }
+    &>:last-child{
+        text-align: right;
+        font-style: italic;
+    }
+}
+
+#pricing-button{
+    --button-size: 90px;
+    position: relative;
+    color:var(--baseColor);
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.666);
+    background-color: white;
+    border-radius: 50%;
+    height: var(--button-size);
+    padding:0;
+    transition-duration: .25s;
+    &:hover{scale:1.1;}
+    &>*{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        margin:0;
+    }
+    &>input{
+        height:var(--button-size);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity:0;
+        z-index:1;
+        &:checked~span{
+            rotate:-270deg;
+        }
+    }
+    &>span{
+        text-shadow: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 5vw;
+        rotate: 0deg;
+        transition: rotate 0.7s;
+        transform-origin: top left;
+        transition-timing-function: ease-in-out;
+    }
+}
+
+.redirect-button{
+    min-width: 250px;
+    height: 50px;
+    border-radius: 25px;
+    border:none;
+    background: var(--baseColor);
+    color: white;
+    font: italic 700 25px "Monteserrat", sans-serif;
+    cursor: pointer;
+    transition-duration: .15s;
+    &:hover{
+        scale:1.05;
+    }
+    &:active{
+        background: rgba(0, 0, 0, 0.8);
+        scale:0.95;
+    }
+}
+
+.fadePanel{
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter:blur(5px);
+    border: 2px solid white;
+}
+
+#pricingDetails {
+    height: 70vh;
+    border-radius: 50px;
+    width: calc(2* 27%);
+    margin: 0 calc(50% - 30%);
+    padding: 0 3%;
+    color: white;
+    position: fixed;
+    bottom:0;
+    transition: all 0.7s ease-out;
+    transform: translateY(60vh);
+    font-size: 20px;
+    &>div{
+        position: relative;
+        top:50%;
+        transform:translateY(-50%);
+        width:100%;
+        display: grid;
+        grid-template-columns:repeat(4, 1fr);
+        grid-template-areas: "col1 col2 col3 col4";
+        gap: 10px 20px;
+        align-items: center;
+        justify-items: center;
+        &>span{text-align: center;}
+        &>:nth-child(-n+4){
+            font-weight: bold; 
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        &>span:nth-child(n+6):nth-child(-n+8),
+        &>span:nth-child(n+17):nth-child(4n+1){
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        &>span:nth-child(n+14):nth-child(-n+16){
+            align-self: end;
+            width: 70%;
+            height:3px;
+            border-radius:2px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        &>span:nth-child(4n+1){
+            text-align: left;
+            justify-self: left;
+        }
+    }
+}
+
+.price-highlight{
+    font-family: "Albert Sans", sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.toggle-fade {
+    transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+}

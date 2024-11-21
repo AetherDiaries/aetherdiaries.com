@@ -1,0 +1,16 @@
+@keyframes blinking {
+    0% {box-shadow: 0 0 50px white;}
+    66.66% {box-shadow: 0 0 50px rgba(255, 255, 255, 0);}
+    100% {box-shadow: 0 0 50px white;}
+}
+
+@keyframes moveForward {
+    0%{left:-30px;opacity: 0;}
+    33%{opacity: 0;}
+    100% {left:0;opacity: 1;}
+}
+
+@keyframes alignShift{
+    0%{left: 0px;}
+    100%{left: -20px;}
+}
