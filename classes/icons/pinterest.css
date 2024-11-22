@@ -1,8 +1,8 @@
 .pinterest-logo {
 	width: 15px;
 	height: 15px;
-	-webkit-mask-image: url('https://aetherdiaries.github.io/aetherdiaries.com/svgs/pinterest-logo.svg');
-	mask-image: url('https://aetherdiaries.github.io/aetherdiaries.com/svgs/pinterest-logo.svg');
+	-webkit-mask-image: url('/aetherdiaries.com/svgs/pinterest-logo.svg');
+	mask-image: url('/aetherdiaries.com/svgs/pinterest-logo.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
 	-webkit-mask-size: contain;
