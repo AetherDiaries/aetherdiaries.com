@@ -1,6 +1,7 @@
 .whatsapp-logo {
 	width: 15px;
 	height: 15px;
+	background-color: black;
 	-webkit-mask: url('/svgs/whatsapp-logo.svg') no-repeat center;
 	mask: url('/svgs/whatsapp-logo.svg') no-repeat center;
 	-webkit-mask-size: contain;
