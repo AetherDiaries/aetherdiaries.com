@@ -158,7 +158,7 @@ header{
         }
     }
     &>a>.gg-instagram, &>a>.gg-facebook{scale:2;&:hover{scale:1.8;}}
-    &>a>.pinterest-logo, &>a>.whatsapp-logo{background: black;&:hover{background: var(--baseColor);}}
+    &>a>.pinterest-logo, &>a>.whatsapp-logo{background-color: black;&:hover{background-color: var(--baseColor);}}
 }
 
 u {color: var(--baseColor);}
