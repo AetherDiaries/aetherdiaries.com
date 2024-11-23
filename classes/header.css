@@ -58,6 +58,7 @@ header{
 }
 
 #siteTitle{
+    position: relative;
     padding:8px;
     margin-left: 1vw;
     font-family: "Rancho", cursive;
@@ -73,8 +74,7 @@ header{
 }
 
 #socialMediaBar{
-    position: fixed;
-    top: 4vh;
+    position: absolute;
     right: 8vw;
     width: 90px;
     height: 90px;
@@ -82,12 +82,13 @@ header{
     background-color: rgb(255, 255, 255);
     animation: blinking 2s infinite ease-in-out;
     transition: width 0.2s, height 0.2s;
+    transform: translateY(calc(50% - 45px));
     &:hover{animation: none;box-shadow: 0 0 50px white;}
 }
 
 #socialMediaBar:has(#centralButton input:checked) {
     width: 700px;
-    height: 500px;
+    height: 550px;
     box-shadow: 6px 6px 20px rgb(0,0,0,0.6);
     animation: none;
     transition: width 0.5s, height 0.5s 0.2s;
@@ -126,27 +127,24 @@ header{
         object-position: center;
         border-radius: 50%;
     }
-    &>:nth-child(3){
-        width:100%;
-        min-width: 500px;
-    }
     &>:last-child{
         align-self: center;
     }
 }
 
 #socialMediaBoard{
-    --boardHeight: 90px;
-    height: 64px;
-    margin: 0 calc(var(--boardHeight) - 64px);
+    /* height: 65px; */
     width: 100%;
-    border-radius: 45px;
+    padding: 15px;
+    border-radius: 30px;
     background-color: #b4b4b4;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     &>a>*{
+        margin: 20px;
         scale: 3;
         color: black;
         cursor: pointer;
@@ -180,4 +178,17 @@ u {color: var(--baseColor);}
     height: 64px;
     margin:0;
     cursor: pointer;
+}
+
+@media (max-width: 1400px){
+    #nav-tab{display: none;}
+    #siteTitle{font-size: 8vw;}
+}
+
+@media (max-width: calc(700px + 16vw)){
+    #socialMediaBar:has(#centralButton input:checked) {
+        width: calc(100% - 16vw);
+        height: 650px;
+        &>#social-description>*{font-size: 3vw;}
+    }
 }
