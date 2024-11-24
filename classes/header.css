@@ -15,10 +15,13 @@ header{
     aspect-ratio: 1;
     border: 5px solid white;
     border-radius: 50%;
+    position:relative;
     &>img{
-        display: block;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -50%);
         height: 60px;
-        margin: 10px auto;
     }
 }
 
@@ -181,7 +184,15 @@ u {color: var(--baseColor);}
 
 @media (max-width: 1400px){
     #nav-tab{display: none;}
-    #siteTitle{font-size: 8vw;}
+    #siteTitle{
+        font-size: 8vw;
+    }
+    #site-logo {
+        height: 7vw;
+        border: .5vw solid white;
+        &>img{height: 5vw;}
+    }
+    
 }
 
 @media (max-width: calc(700px + 16vw)){
