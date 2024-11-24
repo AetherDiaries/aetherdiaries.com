@@ -205,7 +205,7 @@ body{
     #main>:first-child{
         padding: 0 0 10vw var(--padLimitW);
         width:unset;
-        height: 40vh;
+        height: 35vh;
         align-content: end;
         flex:1;
         font-size: 4vh;
