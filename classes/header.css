@@ -201,4 +201,11 @@ u {color: var(--baseColor);}
         height: 650px;
         &>#social-description>*{font-size: 3vw;}
     }
+    #siteTitle{
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.2) 35%, rgba(255, 255, 255, 0.7) 65%);
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
 }
