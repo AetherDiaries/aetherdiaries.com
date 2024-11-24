@@ -16,9 +16,10 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-#main>div{
+#main>*{
     color: white;
     height: 80vh;
     &:first-child {
@@ -35,7 +36,10 @@ body{
         grid: repeat(2, auto) / 90px 1fr;
         align-items: center;
         text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.666);
-        &>:last-child{font-family: "Merriweather", serif;}
+        &>:last-child{
+            font-family: "Merriweather", serif;
+            white-space: nowrap;
+        }
     }
     &:last-child {
         padding-right: var(--padLimitW);
@@ -111,7 +115,7 @@ body{
 }
 
 .redirect-button{
-    min-width: 250px;
+    width: 250px;
     height: 50px;
     border-radius: 25px;
     border:none;
@@ -191,4 +195,29 @@ body{
 
 .toggle-fade {
     transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+}
+
+@media (max-width: 1400px){
+    #main>:first-child>:nth-child(-n+2), #main>:last-child>:first-child{display: none;}
+    #main>:first-child{
+        padding-left: var(--padLimitW);
+        padding-top: 0;
+        width:unset;
+        flex:1;
+        border: 1px solid red;
+        font-size: 4vh;
+    }
+    #main>:last-child{
+        padding-top: 50vh;
+        border: 1px solid red;
+    }
+}
+
+@media (max-width: 508px){
+    #main>:first-child{font-size: 8vw;}
+    #main>:last-child{
+        padding: 0 var(--padLimitW);
+        flex:1;
+        height: unset;
+    }
 }
