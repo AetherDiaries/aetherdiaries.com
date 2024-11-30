@@ -45,7 +45,7 @@ function handleResize() {
     
     if (window.innerWidth < 1400) {
         pricingDetails.innerHTML = `
-        <div class="mobile-message">The pricing chart is unavailable for small screens. Please view on a larger device.
+        <div class="mobile-message">The pricing chart is unavailable for small screens. Please view on a larger device or visit<br><br>------>>> <a href="order.html" target ="_blank" rel = "noopener noreferrer">ORDER<a>
         </div>
         `;
     } else {
