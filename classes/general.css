@@ -155,6 +155,7 @@ body{
     transition: all 0.7s ease-out;
     transform: translateY(60vh);
     font-size: 20px;
+    z-index: 99;
     &>div{
         position: relative;
         top:50%;
