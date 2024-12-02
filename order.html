@@ -68,10 +68,10 @@
         <!-- Body Section -->
         <iframe id="orderRequestForm" src="https://docs.google.com/forms/d/e/1FAIpQLSf1qaazASJOf8rd8uZn3CVAPtzjGFfs0kBWr9sBY_EMYKwIAw/viewform?embedded=true" frameborder="0">Loading…</iframe>
 
-        <div class="toggle-button" id="toggleButton">₹</div>
+        <div class="toggle-button" id="toggleButton">&#8377;</div>
 
         <section id = "priceCalculatorPanel">
-            <h1>Check your Order Price below:</h1>
+            <h1>Check your Order Price here:</h1>
             
             <form id="priceForm">
                 <!-- Type of Option -->
@@ -89,8 +89,10 @@
                 </div>
                 
                 <!-- Number of Portraits -->
-                <label for="numPortraits">Number of Portraits:</label>
-                <input type="number" id="numPortraits" min="1" value="1">
+                <div>
+                    <label for="numPortraits">Number of Portraits:</label>
+                    <input type="number" id="numPortraits" min="1" value="1">
+                </div>
                 
                 <!-- Paper Type -->
                 <div class="optionGroup subGroup">
@@ -115,7 +117,7 @@
                 </div>
 
                 <!-- Price Box -->
-                <div class="price-box" id="priceBox">₹0</div>
+                <div class="price-box" id="priceBox">&#8377;0</div>
             </form>
             
         </section>
