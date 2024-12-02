@@ -1,36 +1,36 @@
 body{
-    background: linear-gradient(180deg, #969696 5%, #FFFFFF 20%);
+    background-color: #969696;
     overflow: hidden;
 }
-
-header{background-color: #969696;}
 
 #orderRequestForm{
     width: 100%;
     align-content: center;
+    background: linear-gradient(180deg, #969696 25%, #FFFFFF 75%);
 }
 
-
-/* Styling for the price calculator panel */
 #priceCalculatorPanel {
     position: fixed;
-    top: 15vw;
     right: -100%;
     background-color: white;
     border: 3px solid black;
     border-radius: 10px;
     padding: 20px;
-    transition: right 0.5s ease;
+    transition: 0.5s ease;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#priceCalculatorPanel, .toggle-button {
+    top:50%;
+    transform: translateY(-50%);
 }
 
 .toggle-button {
     position: fixed;
     z-index: 1;
-    top: calc(15vw + 50px);
     right: 0;
     width: 50px;
-    height: 100px;
+    height: 50px;
     background-color: black;
     border: 3px solid black;
     border-radius: 50% 0 0 50%;
@@ -40,18 +40,11 @@ header{background-color: #969696;}
     justify-content: center;
     color: white;
     font-weight: bold;
+    font-size: 25px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.toggle-button:hover {
-    background-color: #333333;
-}
-
-#priceCalculatorPanel.open {
-    right: 20px;
-}
-
-
+#priceCalculatorPanel.open {right: 20px;}
 
 #priceForm{
     display: flex;
@@ -76,28 +69,45 @@ header{background-color: #969696;}
     text-align: center;
 }
 
+#numPortraits{
+    max-width: 100px;
+    height: 40px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight:bold;
+    text-align: center;
+}
+
 .optionGroup {
-display: flex;
-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .optionGroup label {
-padding: 10px 20px;
-border: 2px solid #000;
-border-radius: 5px;
-background-color: #fff;
-cursor: pointer;
-transition: background-color 0.3s, color 0.3s;
-font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
 }
 
-.optionGroup input {
-display: none;
-}
+.optionGroup input {display: none;}
 
 .optionGroup input:checked + label {
-background-color: #000;
-color: #fff;
+    background-color: #000;
+    color: #fff;
 }
 
 .subGroup label{border-radius: 30px;}
+
+@media (max-width: calc(700px + 16vw)){
+    #priceCalculatorPanel{width: 80vw;}
+
+    #priceCalculatorPanel.open {
+        right:50%;
+        translate:50%;
+    }
+}
