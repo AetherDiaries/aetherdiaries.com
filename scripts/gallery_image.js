@@ -4,7 +4,15 @@ const p2 = document.getElementById('page2');
 const theBlanks = document.getElementById('transitionSheet');
 const displayImage = p2.querySelector('img');
 const bodyStyle = document.querySelector('body').style;
-const defaultBodyPaddingTop = bodyStyle.paddingTop;
+
+function adjustBodyPaddingTop() {
+    document.body.style.paddingTop = `${document.querySelector('header').offsetHeight}px`;
+}
+
+adjustBodyPaddingTop();
+window.addEventListener('load', adjustBodyPaddingTop);
+window.addEventListener('resize', adjustBodyPaddingTop);
+
 
 fetch('images.json').then(response => response.json()).then(data => {
     const { basePath, images } = data;
@@ -51,6 +59,6 @@ returnButton.onclick = () =>{
     setTimeout(() => {
         theBlanks.style.background = 'var(--baseColor)';
         theBlanks.style.transform = 'translateX(100%)';
-        bodyStyle.paddingTop = defaultBodyPaddingTop;
+        adjustBodyPaddingTop();
     }, 400);
 };

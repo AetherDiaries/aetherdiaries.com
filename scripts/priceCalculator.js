@@ -44,10 +44,12 @@ function updatePrice() {
     
     toggleInputLabels("paperType", true);
     toggleInputLabels("framingDecision", true);
+    numPortraits.style.color = "";
     numPortraits.disabled = false;
     
     if (portraitOption === "custom") {
         //Freeze All options for Custom
+        numPortraits.style.color = disabledElementColour;
         numPortraits.disabled = true;
         toggleInputLabels("paperType", false);
         toggleInputLabels("framingDecision", false);
@@ -55,13 +57,14 @@ function updatePrice() {
         priceBox.innerHTML = "Custom<br>(Contact Artist/Place the order)";
         return;
     }
-
+    
     
     let price = 0;
     
     if (portraitOption === "basic") {
         document.getElementById('paperA4').checked = true;
         numPortraits.value = "1";
+        numPortraits.style.color = disabledElementColour;
         numPortraits.disabled = true;
         toggleInputLabels("paperType", false);
         [, portraits, framingFee] = checkValues();
@@ -75,8 +78,8 @@ function updatePrice() {
     const upfrontPayment = portraitOption === "basic" ? price : Math.floor(price * 0.5);
 
     priceBox.innerHTML = `
-        <div>₹${price}</div>
-        <u style = "font-size: 14px;">Upfront: ₹${upfrontPayment}</u>
+        <div>&#8377;${price}</div>
+        <u style = "font-size: 14px;">Upfront: &#8377;${upfrontPayment}</u>
         `;
 }
 
