@@ -162,29 +162,29 @@ body{
         transform:translateY(-50%);
         width:100%;
         display: grid;
-        grid-template-columns:repeat(4, 1fr);
-        grid-template-areas: "col1 col2 col3 col4";
-        gap: 10px 20px;
+        grid-template-columns:repeat(3, 1fr);
+        grid-template-areas: "col1 col2 col3";
+        gap: 20px 20px;
         align-items: center;
         justify-items: center;
         &>span{text-align: center;}
-        &>:nth-child(-n+4){
+        &>:nth-child(-n+3){
             font-weight: bold;
             color: rgba(255, 255, 255, 0.8);
         }
-        &>span:nth-child(n+6):nth-child(-n+8),
-        &>span:nth-child(n+17):nth-child(4n+1){
+        &>span:nth-child(n+5):nth-child(-n+6),
+        &>span:nth-child(n+13):nth-child(3n+1){
             font-size: 16px;
             color: rgba(255, 255, 255, 0.6);
         }
-        &>span:nth-child(n+14):nth-child(-n+16){
+        &>span:nth-child(n+11):nth-child(-n+12){
             align-self: end;
             width: 70%;
             height:3px;
             border-radius:2px;
             background-color: rgba(255, 255, 255, 0.5);
         }
-        &>span:nth-child(4n+1){
+        &>span:nth-child(3n+1){
             text-align: left;
             justify-self: left;
         }
