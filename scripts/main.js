@@ -15,20 +15,22 @@ navPriceButton.addEventListener('click', () => {
 });
 
 function pricingDetailsReveal() {
+    const pricingChartChild = pricingChart.firstElementChild;
+
     if (pricingChartButton.checked) {
         Object.assign(pricingChart.style, pricingChartNewStyles);
+        if(pricingChartChild){pricingChartChild.style.opacity = '1';}
+        
         // Fade out
         toggleFadeElements.forEach(toggleFadeElement => {
             toggleFadeElement.style.opacity = 0;
-            if (toggleFadeElement.hasAttribute('data-left')) {
-                toggleFadeElement.style.transform = `translateX(-${shiftValue})`;
-            } else {
-                toggleFadeElement.style.transform = `translateX(${shiftValue})`;
-            }
+            toggleFadeElement.style.transform = toggleFadeElement.hasAttribute('data-left') ? `translateX(-${shiftValue})` : `translateX(${shiftValue})`;
         });
         
     } else {
         pricingChart.style = defaultPanelStyle;
+        if(pricingChartChild){pricingChartChild.style.opacity = '';}
+
         // Fade in
         toggleFadeElements.forEach(toggleFadeElement => {
             toggleFadeElement.style.opacity = 1;
