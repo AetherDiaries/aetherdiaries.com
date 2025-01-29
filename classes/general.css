@@ -172,18 +172,21 @@ body{
     height: 80%;
     width: 80%;
     justify-content: space-around;
+    perspective: 1000px;
 }
 .packagePanel{
+    position: relative;
     border: 1px solid white;
     border-radius: 8px;
     display:flex;
     flex-direction: column;
     min-width: 200px;
-    width: 15vw;
+    width: 17vw;
     padding: 1vw 2vw;
     justify-content: space-around;
     align-items: center;
     transition: all .15s;
+    transform-style: preserve-3d;
     font-size: 16px;
     &>div{
         text-align: center;
@@ -201,15 +204,38 @@ body{
     &:hover{
         border: 5px solid var(--baseColor);
         border-radius: 20px;
-        background: linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+        background: linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.75) 100%);
         scale: 1.03;
         cursor: pointer;
+        &#panel1{transform: rotateY(15deg);}
+        &#panel2{transform: rotateY(-15deg);}
     }
     &:hover .price-highlight{
         color: var(--baseColor);
         font-size: 40px;
         text-shadow: -1px -1px 0 white, 1px 1px 0 black;
     }
+}
+
+.overlaySample {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--baseColor);
+    text-shadow: 1px 1px 0 black;
+    transition: all 0.15s ease-in-out;
+}
+
+.packagePanel.dimmed *:not(.overlaySample) {
+    display: none;
+    transition: opacity 0.15s ease-in-out;
 }
 
 .price-highlight{
@@ -225,6 +251,27 @@ body{
 
 .toggle-fade {
     transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+}
+
+#closePricingDetails{
+    position: absolute;
+    top: -8%;
+    right: -9%;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 28px;
+    aspect-ratio: 1;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .15s;
+    &:hover{
+        background-color: white;
+        color: black;
+        scale: 1.2;
+    }
 }
 
 @media (max-width: 1400px){
