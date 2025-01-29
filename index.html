@@ -116,7 +116,8 @@
         <!-- Pricing Chart - Faded Pannel -->
         <div class = "fadePanel" id = "pricingDetails">
             <div id="packageContainer">
-                <div class = "packagePanel">
+                <div class = "packagePanel" id="panel1">
+                    <div class="overlaySample" style="background-image: url('svgs/paintings/image2.jpg');"></div>
                     <div>Standard</div>
                     <div class="price-highlight">&#8377;330<br>
                         <div>onward</div>
@@ -128,7 +129,8 @@
                     <div>&cross; Negotiable Pricing<span></span></div>
                     <div>&cross; Customizable<span></span></div>
                 </div>
-                <div class = "packagePanel">
+                <div class = "packagePanel" id = "panel2">
+                    <div class="overlaySample" style="background-image: url('svgs/paintings/image1.jpg');"></div>
                     <div>Custom</div>
                     <div class="price-highlight">CUSTOM<br>
                         <div>
@@ -142,6 +144,7 @@
                     <div>&check; Negotiable Pricing</div>
                     <div>&check; Customizable</div>
                 </div>
+                <button id = "closePricingDetails" onclick="pricingChartButton.click()">&#10006</button>
             </div>
         </div>
 
