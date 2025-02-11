@@ -3,11 +3,11 @@ const priceBox = document.getElementById("priceBox");
 
 const disabledElementColour = '#969696';
 const prices = {
-    basic: 70,
-    standard: [430, 330, 230],
+    basic: 199,
+    standard: 330,
     framingFees: {
-    a4: 150,
-    cartridge: 250,
+    a4: 120,
+    cartridge: 150,
     },
 };
 
@@ -70,9 +70,7 @@ function updatePrice() {
         [, portraits, framingFee] = checkValues();
         price = portraits * prices.basic + framingFee;
     } else if (portraitOption === "standard") {
-        const standardPrice = portraits === 1? prices.standard[0] : portraits === 2 ? prices.standard[1] : prices.standard[2];
-        
-        price = portraits * standardPrice + framingFee;
+        price = portraits * prices.standard + framingFee;
     }
 
     const upfrontPayment = portraitOption === "basic" ? price : Math.floor(price * 0.5);
